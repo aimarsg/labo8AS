@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: bd
+	
+spec:
+  replicas: 1
+  selector:
+    matchlabels:
+      componente: bd
+			
+  template:
+    metadata:
+      labels:
+        componente: bd
+    spec:
+      containers:
+        - name: bd
+          image: redis:alpine
+          ports:
+            - containerPort: 6379

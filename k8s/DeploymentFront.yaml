@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: web
+	
+spec:
+  replicas: 1
+  selector:
+    matchlabels:
+      componente: web
+			
+  template:
+    metadata:
+      labels:
+        componente: web
+    spec:
+      containers:
+        - name: front-web
+          image: aimarsg/as-laboratorio8-web
+          ports:
+          - containerPort: 80
