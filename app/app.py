@@ -18,4 +18,4 @@ def get_hit_count():
 def hello():
 	#os._exit(0)
 	count = get_hit_count()
-	return 'Hola que tal! Este siiitio se ha visitado {} veces.\n'.format(count)
+	return 'Hola que tal! Este siiitio se haa visitado {} veces.\n'.format(count)
