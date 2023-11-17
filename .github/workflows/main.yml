@@ -33,7 +33,7 @@ jobs:
           location: us-central1
       - name: desplegar objetos
         run: |
-          kubectl rollout restart deployment web
+          #kubectl rollout restart deployment web
           kubectl apply -f k8s/DeploymentFront.yaml 
           kubectl apply -f k8s/DeploymentBD.yaml 
           kubectl apply -f k8s/ClusterIp.yaml
