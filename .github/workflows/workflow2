@@ -1,0 +1,17 @@
+name: workflow2
+
+on:
+  push:
+    branches:
+      - "!master"
+jobs:
+  tareas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bajar codigo
+        uses: actions/checkout@v4
+      - name: advanced-security/python-lint-code-scanning-action@v1
+        uses: advanced-security/python-lint-code-scanning-action@v1
+        with: 
+          linter: pylint
+      
