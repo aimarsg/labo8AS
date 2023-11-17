@@ -2,11 +2,8 @@ name: workflow2
 
 on:
   push:
-    branches:
-      - '*'         # matches every branch that doesn't contain a '/'
-      - '*/*'       # matches every branch containing a single '/'
-      - '**'        # matches every branch
-      - '!master'   # excludes master
+    branches-ignore:
+      - master
 jobs:
   tareas:
     runs-on: ubuntu-latest
