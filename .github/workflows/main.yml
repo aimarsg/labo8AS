@@ -18,6 +18,7 @@ jobs:
         with:
           push: true
           tags: aimarsg/as-laboratorio8-web
+          context: "{{defaultContext}}:app"
       - name: login google cloud
         uses: google-github-actions/auth@v1
         with:
