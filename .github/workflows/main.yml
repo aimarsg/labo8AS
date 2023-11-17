@@ -26,7 +26,7 @@ jobs:
       - name: autenticacion kubernetes
         uses: simenandre/setup-gke-gcloud-auth-plugin@v1
       - name: configure kubectl
-        uses: google-github-actions/setup-gke-gcloud-auth-plugin@v1
+        uses: google-github-actions/geet-gke-credentials@v1
         with:
           cluster_name: autopilot-cluster-1
           location: us-central1
