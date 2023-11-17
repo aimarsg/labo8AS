@@ -33,11 +33,7 @@ jobs:
       - name: desplegar objetos 
         run: |
           kubectl rollout restart deployment web
-          kubectl apply -f
-          kubectl apply -f
-          kubectl apply -f
-          kubectl apply -f
-        
-          
-          
-          
+          kubectl apply -f DeploymentFront.yaml 
+          kubectl apply -f DeploymentBD.yaml 
+          kubectl apply -f ClusterIp.yaml
+          kubectl apply -f LoadBalancer.yaml
