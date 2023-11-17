@@ -2,15 +2,15 @@ apiVersion: v1
 kind: Service
 
 metadata:
-  name: loadBalancer
+  name: loadbalancer
   labels:
-    componente: red
+    componente: web
 
 spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 5000
   selector:
     componente: web
 

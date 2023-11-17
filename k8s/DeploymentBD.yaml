@@ -3,20 +3,20 @@ kind: Deployment
 
 metadata:
   name: bd
-	
+
 spec:
   replicas: 1
   selector:
-    matchlabels:
+    matchLabels:
       componente: bd
-			
+
   template:
     metadata:
       labels:
         componente: bd
     spec:
       containers:
-        - name: bd
-          image: redis:alpine
-          ports:
-            - containerPort: 6379
+      - name: bd
+        image: redis:alpine
+        ports:
+        - containerPort: 6379

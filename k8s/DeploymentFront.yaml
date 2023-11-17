@@ -3,13 +3,13 @@ kind: Deployment
 
 metadata:
   name: web
-	
+  
 spec:
   replicas: 1
   selector:
-    matchlabels:
+    matchLabels:
       componente: web
-			
+
   template:
     metadata:
       labels:
@@ -19,4 +19,4 @@ spec:
         - name: front-web
           image: aimarsg/as-laboratorio8-web
           ports:
-          - containerPort: 80
+            - containerPort: 5000
