@@ -1,0 +1,43 @@
+name: workflow
+
+on: push
+
+jobs:
+  tareas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bajar codigo
+        uses: actions/checkout@v4
+      - name: login to docker hub
+        uses: docker/login-action@3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: aimarsg/as-laboratorio8-web
+      - name: login google cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCLOUD_TOKEN }}
+          project_id: ${{ secrets.GCLOUD_NAME }}
+      - name: autenticacion kubernetes
+        uses: simenandre/setup-gke-gcloud-auth-plugin@v1
+      - name: configure kubectl
+        uses: google-github-actions/setup-gke-gcloud-auth-plugin@v1
+        with:
+          cluster_name: autopilot-cluster-1
+          location: us-central1
+      - name: desplegar objetos 
+        run: |
+          kubectl rollout restart deployment web
+          kubectl apply -f
+          kubectl apply -f
+          kubectl apply -f
+          kubectl apply -f
+        
+          
+          
+          
